@@ -2,14 +2,13 @@ package;
 
 import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.Flxtext;
 
 class PlayState extends FlxState
 {
 	override public function create():Void
 	{
 		super.create();
-		var helloText:FlxText = new FlxText(0, 0, 0, "hello world", true);
+		var helloText = new flixel.text.FlxText(0, 0, 0, "hello world", 64);
 		helloText.screenCenter();
 		add(helloText);
 		
