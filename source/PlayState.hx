@@ -9,7 +9,8 @@ class PlayState extends FlxState
 	override public function create():Void
 	{
 		super.create();
-		var helloText:FlxText = new FlxText(50, 50, 0, "hello world", true);
+		var helloText:FlxText = new FlxText(0, 0, 0, "hello world", true);
+		helloText.screenCenter();
 		add(helloText);
 		
 	}
