@@ -2,26 +2,37 @@ package;
 
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
+import flixel.math.FlxRandom;
 
 class Hero extends FlxSprite
  
 {
+	static var RNG:FlxRandom = new FlxRandom();
+	
+	private var FloatX:Float = RNG.float(-2, 2);
+	private var FloatY:Float = RNG.float(-2, 2);
 
-	public function new() 
+
+	public function new(X:Float, Y:Float) 
 	{
-		super();
-		hero = makeGraphic(100, 100, FlxColor.BLUE);
+		super(X, Y);
+		
+		
+		this.makeGraphic(10, 10, FlxColor.BLUE);
+		
 	}
 	
 	override public function update(elapsed:Float):Void
     {
         super.update(elapsed);
-		if (hero.y >= 100)
-			hero.color = FlxColor.RED;
-		if (hero.y < 100)
-			hero.color = FlxColor.BLUE;
+		if (this.y >= 150)
+			this.color = FlxColor.RED;
+		if (this.y < 150)
+			this.color = FlxColor.BLUE;
 			
-		hero.y += 
+		this.y += FloatY;
+		this.x += FloatX;
+		super.update(elapsed);
     }
 	
 }
