@@ -25,6 +25,9 @@ class StandState extends PlayerState
 			return PlayerStates.CROUCH;
 		} 
 		
+		if (input.shiftPressed) {
+			return PlayerStates.ATTACK;
+		}
 		var horizontalInput:Int = 0;
 		if (input.leftPressed) {
 			horizontalInput--;
@@ -36,6 +39,7 @@ class StandState extends PlayerState
 		if (horizontalInput != 0) {
 			return PlayerStates.RUN;
 		} 
+		
 		
 		return PlayerStates.NO_CHANGE;
 	}
